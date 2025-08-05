@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
 // ✅ Pass HTTP server to Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: "http://127.0.0.1:5500", // your frontend origin
+    origin: "https://real-time-chat-app-two-ruby.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
