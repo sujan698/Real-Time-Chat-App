@@ -1,0 +1,124 @@
+/* Global Styling */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #ffffff, #6d27ef);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+nav {
+  background-color: #4b1fa6;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: white;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Chat Container */
+.container {
+  flex-grow: 1;
+  max-width: 900px;
+  width: 95%;
+  background-color: #ffffffa8;
+  border-radius: 12px;
+  margin: 20px auto;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Message Bubbles */
+.message {
+  max-width: 60%;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.left {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+  float: left;
+  clear: both;
+}
+
+.right {
+  background-color: #d1b3ff;
+  align-self: flex-end;
+  float: right;
+  clear: both;
+}
+
+/* Send Box */
+.send {
+  background-color: transparent;
+  padding: 10px 0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+}
+
+#send-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 900px;
+  width: 95%;
+  margin: auto;
+}
+
+#messageInp {
+  flex-grow: 1;
+  height: 40px;
+  padding: 8px 14px;
+  border: 2px solid #4b1fa6;
+  border-radius: 20px;
+  font-size: 15px;
+  outline: none;
+}
+
+.btn {
+  padding: 0 20px;
+  height: 40px;
+  background-color: #4b1fa6;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3a1688;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .message {
+    max-width: 80%;
+  }
+
+  #messageInp {
+    font-size: 14px;
+  }
+}
