@@ -3,9 +3,14 @@ const { Server } = require("socket.io");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8000;
-const io = new Server(Server, {
+
+// ✅ Create a raw HTTP server
+const server = http.createServer();
+
+// ✅ Pass HTTP server to Socket.IO
+const io = new Server(server, {
   cors: {
-    origin: "http://127.0.0.1:5500",
+    origin: "http://127.0.0.1:5500", // your frontend origin
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -13,7 +18,10 @@ const io = new Server(Server, {
 
 const users = {};
 
+// ✅ Handle socket events
 io.on("connection", (socket) => {
+  console.log("User connected:", socket.id);
+
   socket.on("new-user-joined", (name) => {
     users[socket.id] = name;
     socket.broadcast.emit("user-joined", name);
@@ -31,6 +39,8 @@ io.on("connection", (socket) => {
     delete users[socket.id];
   });
 });
-Server.listen(PORT, "0.0.0.0", () => {
+
+// ✅ Start the server
+server.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
