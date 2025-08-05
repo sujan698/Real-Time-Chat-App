@@ -4,7 +4,7 @@
   "description": "this is a node server for my uChat application",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch index.js",
+    "dev": "nodemon --watch index.js",
     "start": "nodemon index.js"
   },
   "author": "Sujan",
