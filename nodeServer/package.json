@@ -1,10 +1,11 @@
 {
   "name": "nodeserver",
   "version": "1.0.0",
-  "description": "this is a nede server for my uChat application",
+  "description": "this is a node server for my uChat application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch index.js",
+    "start": "node index.js"
   },
   "author": "Sujan",
   "license": "ISC",
