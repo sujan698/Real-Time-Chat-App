@@ -2,8 +2,6 @@ const http = require("http");
 const { Server } = require("socket.io");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 8000;
-
 // ✅ Create a raw HTTP server
 const server = http.createServer((req, res) => {
   if (req.url === "/favicon.ico") {
@@ -46,6 +44,7 @@ io.on("connection", (socket) => {
 });
 
 // ✅ Start the server
-server.listen(PORT, "0.0.0.0", () => {
+const PORT = process.env.PORT;
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
