@@ -5,7 +5,12 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8000;
 
 // ✅ Create a raw HTTP server
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+  if (req.url === "/favicon.ico") {
+    res.writeHead(204); // No Content
+    res.end();
+  }
+});
 
 // ✅ Pass HTTP server to Socket.IO
 const io = new Server(server, {
