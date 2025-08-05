@@ -1,17 +1,19 @@
 {
-  "name": "nodeserver",
+  "name": "nodeServer",
   "version": "1.0.0",
   "description": "this is a node server for my uChat application",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch index.js",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Sujan",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "nodemon": "^3.1.10",
     "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
